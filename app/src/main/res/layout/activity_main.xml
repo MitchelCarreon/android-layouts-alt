@@ -382,6 +382,7 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
+                        android:id="@+id/prod_fields"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/spacing_medium"
                         android:layout_marginRight="@dimen/spacing_medium"
@@ -390,45 +391,45 @@
                         android:orientation="vertical">
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/prod01_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/prod01_field"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/prod02_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/prod02_field"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/prod03_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/prod03_field"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/prod04_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/prod04_field"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
