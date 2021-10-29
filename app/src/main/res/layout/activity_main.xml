@@ -21,6 +21,7 @@
             app:singleLine="true">
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/scan_chip"
                 style="@style/Chip.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -28,6 +29,7 @@
                 app:chipIcon="@drawable/ic_center_focus_weak_chip" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/topUp_chip"
                 style="@style/Chip.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,6 +37,7 @@
                 app:chipIcon="@drawable/ic_add_circle_outline_chip" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/send_chip"
                 style="@style/Chip.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -42,6 +45,7 @@
                 app:chipIcon="@drawable/ic_open_in_new_chip" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/request_chip"
                 style="@style/Chip.Blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,15 +78,15 @@
                     android:layout_marginLeft="10dp"
                     android:contentDescription="@string/android_phone_image"
                     android:src="@drawable/ic_phone_android"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintBottom_toTopOf="@+id/pulsa_iconButtons"
+                    app:layout_constraintEnd_toStartOf="@+id/pulsa_header_guideline"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.482" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/pulsa_header"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
@@ -90,13 +94,13 @@
                     android:textColor="@color/overlay_dark_70"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/buyNow_guideline"
                     app:layout_constraintHorizontal_bias="0.116"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/pulsa_header_guideline"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/bonus_pulsa_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
@@ -104,14 +108,14 @@
                     android:textColor="@color/colorAccentDark"
                     android:textSize="@dimen/small_txt_size"
                     app:layout_constraintBottom_toBottomOf="@+id/android_phone_img"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/buyNow_guideline"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textView3"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
+                    app:layout_constraintStart_toStartOf="@+id/pulsa_header"
+                    app:layout_constraintTop_toBottomOf="@+id/pulsa_header"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button"
+                    android:id="@+id/buyNow_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -120,11 +124,11 @@
                     android:text="@string/buy_now"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/buyNow_guideline"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
-                    android:id="@+id/linearLayout"
+                    android:id="@+id/pulsa_iconButtons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_large"
@@ -132,10 +136,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/button"
-                    app:layout_constraintVertical_bias="0.56">
+                    app:layout_constraintTop_toBottomOf="@+id/buyNow_btn"
+                    app:layout_constraintVertical_bias="0.85">
 
                     <Button
+                        android:id="@+id/electric_btn"
                         style="@style/Button.Blue.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -144,9 +149,11 @@
                         android:text="@string/electric"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="@dimen/small_txt_size" />
+                        android:textSize="@dimen/small_txt_size"
+                        tools:ignore="TextContrastCheck" />
 
                     <Button
+                        android:id="@+id/cashout_btn"
                         style="@style/Button.Blue.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -155,9 +162,11 @@
                         android:text="@string/cashout"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="@dimen/small_txt_size" />
+                        android:textSize="@dimen/small_txt_size"
+                        tools:ignore="TextContrastCheck" />
 
                     <Button
+                        android:id="@+id/games_btn"
                         style="@style/Button.Blue.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -166,9 +175,11 @@
                         android:text="@string/games"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="@dimen/small_txt_size" />
+                        android:textSize="@dimen/small_txt_size"
+                        tools:ignore="TextContrastCheck" />
 
                     <Button
+                        android:id="@+id/seeAll_btn"
                         style="@style/Button.Blue.Borderless"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -177,19 +188,20 @@
                         android:text="@string/see_all"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="@dimen/small_txt_size" />
+                        android:textSize="@dimen/small_txt_size"
+                        tools:ignore="TextContrastCheck" />
 
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline2"
+                    android:id="@+id/pulsa_header_guideline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintGuide_begin="64dp" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline3"
+                    android:id="@+id/buyNow_guideline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -224,6 +236,7 @@
 
         <androidx.cardview.widget.CardView
             style="@style/CardView.White"
+            android:id="@+id/invoice_cardview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_large"
@@ -236,7 +249,7 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/linearLayout_invoice"
+                    android:id="@+id/invoice_header"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -247,6 +260,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/invoice_txt"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/spacing_large"
@@ -254,6 +268,7 @@
                         android:text="@string/invoice" />
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reset_btn"
                         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -268,14 +283,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/overlay_dark_40"
-                    app:layout_constraintBottom_toTopOf="@id/prod_and_cboxes"
-                    app:layout_constraintEnd_toEndOf="@+id/linearLayout_invoice"
+                    app:layout_constraintBottom_toTopOf="@id/prodFields_and_cboxes"
+                    app:layout_constraintEnd_toEndOf="@+id/invoice_header"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout_invoice" />
+                    app:layout_constraintTop_toBottomOf="@+id/invoice_header" />
 
                 <LinearLayout
-                    android:id="@+id/prod_and_cboxes"
+                    android:id="@+id/prodFields_and_cboxes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -286,6 +301,7 @@
                     app:layout_constraintTop_toBottomOf="@id/divider_invoice_header">
 
                     <LinearLayout
+                        android:id="@+id/prod_cboxes"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginTop="@dimen/spacing_medium"
@@ -328,9 +344,10 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/dollar_signs"
                         android:layout_width="0dp"
-                        android:layout_weight="0.4"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -443,7 +460,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/relativeLayout"
+            android:id="@+id/total_section"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
