@@ -68,18 +68,18 @@
 
                 <ImageView
                     android:id="@+id/android_phone_img"
-                    android:contentDescription="@string/android_phone_image"
                     android:layout_width="44dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/android_phone_image"
                     android:src="@drawable/ic_phone_android"
                     app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                     app:layout_constraintEnd_toStartOf="@+id/guideline2"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.74" />
+                    app:layout_constraintVertical_bias="0.482" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -127,6 +127,7 @@
                     android:id="@+id/linearLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_large"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +141,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_lightbulb"
-
                         android:text="@string/electric"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
@@ -279,6 +279,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:padding="@dimen/spacing_medium"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -286,8 +287,10 @@
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="7"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:layout_marginBottom="@dimen/spacing_medium"
+                        android:layout_weight="5.5"
                         android:orientation="vertical">
 
                         <com.google.android.material.checkbox.MaterialCheckBox
@@ -325,51 +328,53 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
                         android:layout_height="match_parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                             <ImageView
                                 android:id="@+id/dollar_01"
-                                android:layout_width="@dimen/spacing_large"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
                                 android:src="@drawable/ic_dollar"
-                                app:layout_constraintBottom_toTopOf="@+id/dollar_04"
-                                app:layout_constraintEnd_toEndOf="@+id/dollar_04"
-                                app:layout_constraintStart_toStartOf="@+id/dollar_04"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_chainStyle="spread" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageView
                                 android:id="@+id/dollar_02"
-                                android:layout_width="@dimen/spacing_large"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
                                 android:src="@drawable/ic_dollar"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/dollar_03" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/dollar_01" />
 
                             <ImageView
                                 android:id="@+id/dollar_03"
-                                android:layout_width="@dimen/spacing_large"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
                                 android:src="@drawable/ic_dollar"
-                                app:layout_constraintBottom_toTopOf="@+id/dollar_02"
-                                app:layout_constraintEnd_toEndOf="@+id/dollar_02"
-                                app:layout_constraintStart_toStartOf="@+id/dollar_02"
-                                app:layout_constraintTop_toBottomOf="@+id/dollar_04" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/dollar_02" />
 
                             <ImageView
                                 android:id="@+id/dollar_04"
-                                android:layout_width="@dimen/spacing_large"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="40dp"
                                 android:src="@drawable/ic_dollar"
-                                app:layout_constraintBottom_toTopOf="@+id/dollar_03"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/dollar_01" />
+                                app:layout_constraintTop_toBottomOf="@id/dollar_03" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -381,55 +386,51 @@
                         android:layout_marginEnd="@dimen/spacing_medium"
                         android:layout_marginRight="@dimen/spacing_medium"
                         android:layout_marginBottom="@dimen/spacing_medium"
-                        android:layout_weight="2.5"
+                        android:layout_weight="2.3"
                         android:orientation="vertical">
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/prod01_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/prod02_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/prod03_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/prod04_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_height="wrap_content">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="match_parent" />
                         </com.google.android.material.textfield.TextInputLayout>
 
                     </LinearLayout>
@@ -460,8 +461,8 @@
                 style="@style/AppTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_xxxlarge"
-                android:layout_marginLeft="@dimen/spacing_xxxlarge"
+                android:layout_marginStart="@dimen/spacing_xlarge"
+                android:layout_marginLeft="@dimen/spacing_xlarge"
                 android:text="@string/total"
                 android:textSize="18sp"
                 android:textStyle="bold"
