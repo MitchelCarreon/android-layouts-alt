@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/grey_200">
 
-    <!-- TODO 01. Define the layout for the MainActivity here. -->
-    <!-- NOTE: Remember that in order to include some GUI components you will have to use the Material library -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,7 +59,6 @@
             android:layout_marginTop="@dimen/spacing_large"
             android:layout_marginRight="@dimen/spacing_large"
             android:layout_marginBottom="@dimen/spacing_large"
-
             app:cardCornerRadius="@dimen/card_corner_radius"
             app:cardElevation="@dimen/card_elevation">
 
@@ -70,7 +67,8 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/android_phone_img"
+                    android:contentDescription="@string/android_phone_image"
                     android:layout_width="44dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="10dp"
@@ -104,8 +102,8 @@
                     android:layout_marginBottom="4dp"
                     android:text="@string/bonus_pulsa_50"
                     android:textColor="@color/colorAccentDark"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    android:textSize="@dimen/small_txt_size"
+                    app:layout_constraintBottom_toBottomOf="@+id/android_phone_img"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -136,7 +134,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/button"
                     app:layout_constraintVertical_bias="0.56">
 
-
                     <Button
                         style="@style/Button.Blue.Borderless"
                         android:layout_width="0dp"
@@ -144,10 +141,10 @@
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_lightbulb"
 
-                        android:text="Electric.."
+                        android:text="@string/electric"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="10sp" />
+                        android:textSize="@dimen/small_txt_size" />
 
                     <Button
                         style="@style/Button.Blue.Borderless"
@@ -155,11 +152,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_monetization_on"
-                        android:text="Cashout"
+                        android:text="@string/cashout"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="10sp" />
-
+                        android:textSize="@dimen/small_txt_size" />
 
                     <Button
                         style="@style/Button.Blue.Borderless"
@@ -167,11 +163,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_games"
-                        android:text="Games"
+                        android:text="@string/games"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="10sp" />
-
+                        android:textSize="@dimen/small_txt_size" />
 
                     <Button
                         style="@style/Button.Blue.Borderless"
@@ -179,11 +174,10 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:drawableTop="@drawable/ic_more_horiz"
-                        android:text="See All..."
+                        android:text="@string/see_all"
                         android:textAllCaps="false"
                         android:textColor="@color/overlay_dark_30"
-                        android:textSize="10sp" />
-
+                        android:textSize="@dimen/small_txt_size" />
 
                 </LinearLayout>
 
@@ -200,7 +194,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintGuide_begin="221dp" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -226,7 +219,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/discount" />
-
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -304,7 +296,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:text="Product 01" />
+                            android:text="@string/product_01" />
 
                         <com.google.android.material.checkbox.MaterialCheckBox
                             android:id="@+id/product_02"
@@ -312,7 +304,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:text="Product 02" />
+                            android:text="@string/product_02" />
 
                         <com.google.android.material.checkbox.MaterialCheckBox
                             android:id="@+id/product_03"
@@ -320,7 +312,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:text="Product 03" />
+                            android:text="@string/product_03" />
 
                         <com.google.android.material.checkbox.MaterialCheckBox
                             android:id="@+id/product_04"
@@ -328,7 +320,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:text="Product 04" />
+                            android:text="@string/product_04" />
 
                     </LinearLayout>
 
@@ -386,12 +378,14 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/spacing_medium"
                         android:layout_marginRight="@dimen/spacing_medium"
                         android:layout_marginBottom="@dimen/spacing_medium"
                         android:layout_weight="2.5"
                         android:orientation="vertical">
 
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/prod01_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -403,6 +397,7 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/prod02_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -414,6 +409,7 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/prod03_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -425,6 +421,7 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/prod04_field"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -442,7 +439,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/relativeLayout"
@@ -464,27 +460,27 @@
                 style="@style/AppTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xxxlarge"
                 android:layout_marginLeft="@dimen/spacing_xxxlarge"
-                android:text="Total:"
+                android:text="@string/total"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/calc_tot_button"
                 app:layout_constraintLeft_toRightOf="@id/calc_tot_button" />
 
             <EditText
+                android:id="@+id/total_disp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:hint="$0.00"
-                app:layout_constraintBaseline_toBaselineOf="@+id/total_txt"
                 android:layout_marginLeft="@dimen/spacing_medium"
+                android:background="@null"
+                android:hint="@string/money_disp_placeholder"
+                app:layout_constraintBaseline_toBaselineOf="@+id/total_txt"
                 app:layout_constraintLeft_toRightOf="@id/total_txt" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
 
 </ScrollView>
 
