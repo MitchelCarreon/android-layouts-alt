@@ -499,7 +499,7 @@
                 app:layout_constraintLeft_toRightOf="@id/total_txt" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
+        
     </LinearLayout>
 
 </ScrollView>
