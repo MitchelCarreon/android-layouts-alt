@@ -235,8 +235,8 @@
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
         <androidx.cardview.widget.CardView
-            style="@style/CardView.White"
             android:id="@+id/invoice_cardview"
+            style="@style/CardView.White"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_large"
@@ -398,8 +398,8 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="0dp"
                         android:id="@+id/prod_fields"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/spacing_medium"
                         android:layout_marginRight="@dimen/spacing_medium"
@@ -410,7 +410,8 @@
                         <com.google.android.material.textfield.TextInputLayout
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/prod01_field"

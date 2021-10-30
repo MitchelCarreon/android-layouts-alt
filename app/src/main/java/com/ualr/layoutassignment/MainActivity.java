@@ -3,32 +3,46 @@ package com.ualr.layoutassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.ualr.layoutassignment.databinding.ActivityMainBinding;
 
 import org.w3c.dom.Text;
 
-import java.util.ArrayList;
-
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-    // TODO 02. Create a new method called "calculateTotal" for calculating the invoice's total amount of money
-    public void calculateTotal(){
+
+    public void calculateTotal() {
         Float sum = 0.0f;
-        if (this.binding.product01.isChecked())sum += Float.parseFloat(this.binding.prod01Field.getText().toString());
-        if (this.binding.product02.isChecked())sum += Float.parseFloat(this.binding.prod02Field.getText().toString());
-        if (this.binding.product03.isChecked())sum += Float.parseFloat(this.binding.prod03Field.getText().toString());
-        if (this.binding.product04.isChecked())sum += Float.parseFloat(this.binding.prod04Field.getText().toString());
 
-        this.binding.totalDisp.setText("$ " + sum.toString());
+        LinearLayout cboxes = binding.prodCboxes;
+        for (int i = 0; i < cboxes.getChildCount(); ++i){
+            MaterialCheckBox curr_cbox = (MaterialCheckBox)cboxes.getChildAt(i);
+            if (curr_cbox.isChecked()) {
+                TextInputEditText prod_field = (TextInputEditText) ((TextInputLayout) binding.prodFields.getChildAt(i)).getEditText();
 
+                assert prod_field != null;
+                String user_input = prod_field.getText().toString();
+                if (!user_input.matches("")) sum += Float.parseFloat(user_input);
+            }
+        }
+
+        this.binding.totalDisp.setText(getResources().getString(R.string.dollar_symbol) + " " + sum.toString());
     }
-    // TODO 03. Bind the "calculateTotal" method to the button with the "CALCULATE TOTAL" label
+
+    public void clearInvoice(){
+        LinearLayout fields = binding.prodFields;
+        for (int i = 0; i < fields.getChildCount(); ++i) ((TextInputLayout) fields.getChildAt(i)).getEditText().setText("");
+
+        LinearLayout cboxes = binding.prodCboxes;
+        for (int i = 0; i < cboxes.getChildCount(); ++i) ((MaterialCheckBox)cboxes.getChildAt(i)).setChecked(false);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +51,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
+        // LISTENERS
         this.binding.calcTotButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 calculateTotal();
             }
         });
+        this.binding.resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearInvoice();
+            }
+        });
+
     }
 }
